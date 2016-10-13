@@ -37,7 +37,7 @@ function poll()
   local timestamp = os.time()
 
   -- Output our measurement record to standard out
-  print(string.format("%s %s %s %s", "BOUNDARY_TEST_TOP_PROCESS_MEMORY", tonumber(result), SOURCE, timestamp))
+  print(string.format("%s %s %s %s", "BOUNDARY_TEST_TOP_PROCESS_MEMORY", result, SOURCE, timestamp))
 
 end
 
