@@ -32,7 +32,7 @@ function poll()
   local handle = io.popen("ps -eo pmem | sort -k 1 -nr | head -1")
   local result = handle:read("*a")
   handle:close()
-
+  result = string.gsub(result, "n", "") -- remove line breaks
   -- Get the current time
   local timestamp = os.time()
 
