@@ -12,7 +12,7 @@
       "description": "Source to be used for the measurement",
       "type": "string",
       "default": "",
-      "required": false
+      "required": true
     }
   ]
 }
