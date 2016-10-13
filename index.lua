@@ -34,13 +34,13 @@ function poll()
   handle:close()
   result = string.gsub (result, "\n", "")
   local result1 = string.gsub (result, "\r", "")
-
+  local nom = tonumber(result1)/100
   --  result = string.gsub(result, "n", "") -- remove line breaks
   -- Get the current time
   local timestamp = os.time()
 
   -- Output our measurement record to standard out
-  print(string.format("%s %d %s %s", "BOUNDARY_TEST_TOP_PROCESS_MEMORY", result1, SOURCE, timestamp))
+  print(string.format("%s %d %s %s", "BOUNDARY_TEST_TOP_PROCESS_MEMORY", nom, SOURCE, timestamp))
 
 end
 
