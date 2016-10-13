@@ -28,16 +28,20 @@ local POLL_INTERVAL = 5
 -- Define our function that "samples" our measurement value
 function poll()
 
-  -- Find the top running process percent memory
+   -- Find the top running process percent memory
   local handle = io.popen("ps -eo pmem | sort -k 1 -nr | head -1")
   local result = handle:read("*a")
   handle:close()
-  result = string.gsub(result, "n", "") -- remove line breaks
+  result = string.gsub (result, "\n", "")
+  result = string.gsub (result, "\r", "")
+
+  --  result = string.gsub(result, "n", "") -- remove line breaks
   -- Get the current time
   local timestamp = os.time()
 
   -- Output our measurement record to standard out
   print(string.format("%s %s %s %s", "BOUNDARY_TEST_TOP_PROCESS_MEMORY", result, SOURCE, timestamp))
+
 
 end
 
